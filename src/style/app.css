@@ -1,0 +1,29 @@
+header {
+  background-color: #4646dd;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.header-title {
+  color: #fff;
+  margin: 0;
+  padding: 0.8rem;
+}
+
+.btn-sign {
+  padding: 0.2rem 0.8rem;
+  background-color: rgb(255, 60, 0);
+  color: #fff;
+  border: none;
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+}
+.btn-sign:hover {
+  background-color: #fff;
+  color: #4646dd;
+}
