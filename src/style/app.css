@@ -1,29 +1,73 @@
-header {
-  background-color: #4646dd;
+body {
+  margin: 0;
 }
 
-.nav-container {
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav--main {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin: 0 1rem;
+  padding: 0.5rem 2rem;
+  background-color: #181818;
+  color: #ffffff;
+}
+.nav--main .nav__logo {
+  font-size: 2rem;
+  color: #ddd900;
+}
+.nav--main .nav--items {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+.nav--main .nav--items .nav__item:hover {
+  cursor: pointer;
+}
+.nav--main .dropdown {
+  position: relative;
+}
+.nav--main .dropdown__toggle {
+  display: none;
+  position: absolute;
+  background-color: #585858;
+  width: 200px;
+  border-radius: 2px;
+  box-shadow: 5px 5px 5px #000000;
+  padding: 0.3rem;
+}
+.nav--main .dropdown__toggle a {
+  color: #ffffff;
+  margin: 0.5rem 0;
+  display: block;
+  padding: 0.5rem;
+  border: 1px solid #585858;
+}
+.nav--main .dropdown__toggle a:hover {
+  border: 1px solid #ffffff;
+}
+.nav--main .dropdown:hover .dropdown__toggle {
+  display: block;
 }
 
-.header-title {
-  color: #fff;
-  margin: 0;
-  padding: 0.8rem;
+.btn {
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  background-color: #181818;
+  color: #ffffff;
+  border: 1px solid #181818;
+  cursor: pointer;
+}
+.btn:hover {
+  border: 1px solid #ffffff;
 }
 
-.btn-sign {
-  padding: 0.2rem 0.8rem;
-  background-color: rgb(255, 60, 0);
-  color: #fff;
-  border: none;
-  font-size: 1.3rem;
-  border-radius: 0.5rem;
-}
-.btn-sign:hover {
-  background-color: #fff;
-  color: #4646dd;
-}
+/*# sourceMappingURL=app.css.map */
