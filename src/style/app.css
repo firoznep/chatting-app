@@ -1,5 +1,7 @@
+html,
 body {
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -10,61 +12,85 @@ a {
   text-decoration: none;
 }
 
-.nav--main {
+li {
+  list-style-type: none;
+}
+
+.header--main {
+  height: 100vh;
+  position: relative;
+}
+.header--main .nav--main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 2rem;
-  background-color: #181818;
-  color: #ffffff;
+  background-color: #1212b3;
+  position: fixed;
+  left: 0;
+  right: 0;
+  transition: 0.5s linear;
 }
-.nav--main .nav__logo {
+.header--main .nav--main .brand {
   font-size: 2rem;
-  color: #ddd900;
+  color: #ffffff;
+  margin-left: 2rem;
 }
-.nav--main .nav--items {
+.header--main .nav--main .nav__items {
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 20rem;
 }
-.nav--main .nav--items .nav__item:hover {
-  cursor: pointer;
-}
-.nav--main .dropdown {
+.header--main .nav--main .nav__items .dropdown {
   position: relative;
+  background-color: #727272;
 }
-.nav--main .dropdown__toggle {
-  display: none;
-  position: absolute;
-  background-color: #585858;
-  width: 200px;
-  border-radius: 2px;
-  box-shadow: 5px 5px 5px #000000;
-  padding: 0.3rem;
-}
-.nav--main .dropdown__toggle a {
+.header--main .nav--main .nav__items .nav__item {
+  cursor: pointer;
+  font-size: 1rem;
   color: #ffffff;
-  margin: 0.5rem 0;
-  display: block;
-  padding: 0.5rem;
-  border: 1px solid #585858;
+  padding: 0.5rem 1rem;
 }
-.nav--main .dropdown__toggle a:hover {
+.header--main .nav--main .btn--signin {
+  margin-right: 1rem;
+}
+
+.dropdown__items {
+  position: absolute;
+  left: 0;
+  background-color: #727272;
+  display: none;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  width: 10rem;
+  cursor: initial;
+  box-shadow: 1px 5px 10px #000000;
+}
+.dropdown__items .dropdown__item {
+  margin: 1rem 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+}
+.dropdown__items .dropdown__item:hover {
   border: 1px solid #ffffff;
 }
-.nav--main .dropdown:hover .dropdown__toggle {
+.dropdown__items .dropdown__item a {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.dropdown:hover .dropdown__items {
   display: block;
 }
 
 .btn {
-  padding: 0.3rem 1rem;
-  font-size: 1rem;
-  background-color: #181818;
-  color: #ffffff;
-  border: 1px solid #181818;
+  padding: 0.5rem 2rem;
   cursor: pointer;
+  font-size: 1rem;
+  background-color: #1212b3;
+  color: #ffffff;
+  border: 1px solid transparent;
 }
 .btn:hover {
   border: 1px solid #ffffff;
