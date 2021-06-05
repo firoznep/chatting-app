@@ -18,7 +18,7 @@ export default function Dropdown({
         {listInArray.map((item, index) => {
           return (
             <li className="dropdown__item" key={item[index]}>
-              <Link>{item}</Link>
+              <Link to={`/${item}`}>{item}</Link>
             </li>
           );
         })}

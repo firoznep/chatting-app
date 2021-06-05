@@ -1,10 +1,13 @@
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Link } from "react-router-dom";
-import Button from "./components/Button";
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import Ball from "./components/Ball";
 import ContainerRow from "./components/Container";
+import CustomConfirm from "./components/CustomConfirm";
 import CustomDropdown from "./components/CustomDropdown";
 import Dropdown from "./components/Dropdown";
+import SignUp from "./components/SignUp";
+import HomePage from "./page/HomePage";
 import "./style/App.css";
 
 const App = () => {
@@ -14,20 +17,20 @@ const App = () => {
     window.onscroll = scrollHandle;
   }, [scrolledTo]);
 
-  function scrollHandle(props) {
+  const scrollHandle = (props) => {
     let srl = document.scrollingElement.scrollTop;
 
-    if (srl > 200) {
-      setScrolledTo(200);
+    if (srl > 100) {
+      setScrolledTo(100);
     } else {
       setScrolledTo(0);
     }
-  }
+  };
   return (
     <BrowserRouter>
       <header
         className={classNames("header-main", {
-          "header-main--shrink": scrolledTo === 200,
+          "header-main--shrink": scrolledTo === 100,
         })}
       >
         <ContainerRow>
@@ -37,14 +40,36 @@ const App = () => {
 
           <Dropdown
             // dropdownName="Go To"
-            listInArray={["one", "two", "Contact", "some little long text"]}
+            listInArray={["Ball", "two", "Contact", "confirmMessage"]}
           />
 
           <CustomDropdown />
-          <Button className="btn--active">Button Full</Button>
-          <Button>Button</Button>
+          <Link to="/" className="btn--active">
+            Home
+          </Link>
+          <Link to="/signup" style={{ color: "white" }}>
+            Sign Up
+          </Link>
         </ContainerRow>
       </header>
+
+      <div style={{ height: "8rem" }}></div>
+
+      <Switch>
+        <Route exact path="/">
+          {" "}
+          <HomePage />
+        </Route>
+        <Route path="/signup">
+          <SignUp />
+        </Route>
+        <Route path="/confirmMessage">
+          <CustomConfirm />
+        </Route>
+        <Route path="/Ball">
+          <Ball />
+        </Route>
+      </Switch>
       <div className="spaceholder"></div>
     </BrowserRouter>
   );

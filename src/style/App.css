@@ -25,6 +25,7 @@ li {
   height: 7rem;
   line-height: 2.2;
   transition: all 0.5s, height 0.7s;
+  z-index: 1000;
 }
 
 .header-main--shrink {
@@ -44,12 +45,14 @@ li {
 }
 
 .btn--active {
-  padding: 1.01rem;
-  transition: 0.4s;
+  padding: 0.5rem 1rem;
+  transition: 0.25s;
+  color: white;
+  margin: 0;
 }
 
 .btn--active:hover {
-  border: 2px solid transparent;
+  /* border: 2px solid transparent; */
   background-color: orangered;
   color: #0000a8;
 }
